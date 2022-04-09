@@ -1,0 +1,29 @@
+#introContainer {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    grid-column: 1 / span 3;
+}
+#introContainer::before,
+#introContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#introContainer::before {
+    background-color: var(--bg-color);
+    animation: reveal var(--typewriter-speed-welcome) steps(60) forwards;
+    /* animation-iteration-count: 2 */
+  }
+
+@keyframes reveal {
+    to { top: 100%; }
+  }
+
+  .input {
+    width: 352px;
+  }

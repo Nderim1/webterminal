@@ -1,0 +1,169 @@
+:root {
+  --bg-color: #111014;
+  --font-color: rgb(7, 201, 94);
+  --pointer-color: aliceblue;
+  --typewriter-speed-welcome: 8s;
+  --typewriter-speed-loading: 1.5s;
+}
+
+html,
+body {
+  cursor: cell;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: 'Source Code Pro', monospace, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+  color: var(--font-color);
+  /* font-size: 1.5em; */
+  /* padding-top: 100px; */
+  display: grid;
+  place-content: baseline;
+  text-align: left;
+}
+
+#loading {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: max-content;
+}
+
+#welcome {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: max-content;
+  display: none;
+}
+
+#welcome2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: max-content;
+  display: none;
+}
+
+#welcome::before,
+#welcome::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#loading::before,
+#loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#welcome::before {
+  visibility: visible;
+  background-color: var(--bg-color);
+  animation: typewriter var(--typewriter-speed-welcome) steps(55) forwards;
+  animation-delay: 1s;
+}
+
+/* loading text animation */
+#loading::before {
+  background-color: var(--bg-color);
+  animation: typewriter var(--typewriter-speed-loading) steps(10) 1s;
+  animation-iteration-count: 2
+}
+
+/* loading pointer */
+#loading::after {
+  width: 8px;
+  background: var(--pointer-color);
+  animation: 
+    typewriter var(--typewriter-speed-loading) steps(10) 1s forwards,
+    blink 0.4s steps(5) infinite;
+  animation-iteration-count: 2;
+  /* animation-delay: 4s; */
+}
+
+/* welcome pointer */
+#welcome::after {
+  width: 8px;
+  background: var(--pointer-color);
+  animation: 
+    typewriter var(--typewriter-speed-welcome) steps(55) 1s forwards,
+    blink 0.4s steps(55) infinite;
+}
+
+
+/* 
+This is fake terminal css
+*/
+
+textarea#setter { /* explorer doesn't support [att=val] selector :( */
+  /* left: -1000px;
+  position: absolute; */
+  /* height: 200px;
+  width: 300px; */
+}
+
+.cursor {
+  font-size: 12px;
+  background-color: var(--pointer-color);
+  color: var(--pointer-color);
+  position: relative;
+  opacity: 0.5;
+  display: none;
+}
+
+#terminal {
+  margin: 8px;
+  height: 500px;
+}
+
+#writer {
+  font-family: 'Source Code Pro', monospace, sans-serif;
+  font-weight: bold;
+}
+                  
+#getter {
+  margin: 5px;
+}
+
+.tilde {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+@keyframes typewriter {
+  to { left: 100%; }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+#contentContainer {
+  margin-top: 30px;
+}
+
+.content {
+  display: none;
+}
