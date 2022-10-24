@@ -14,7 +14,7 @@ body {
   padding: 30px;
   margin: 0;
   background-color: var(--bg-color);
-  font-family: 'Source Code Pro', monospace, sans-serif;
+  font-family: "Source Code Pro", monospace, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -58,7 +58,7 @@ body {
 
 #welcome::before,
 #welcome::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -68,7 +68,7 @@ body {
 
 #loading::before,
 #loading::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -87,15 +87,14 @@ body {
 #loading::before {
   background-color: var(--bg-color);
   animation: typewriter var(--typewriter-speed-loading) steps(10) 1s;
-  animation-iteration-count: 2
+  animation-iteration-count: 2;
 }
 
 /* loading pointer */
 #loading::after {
   width: 8px;
   background: var(--pointer-color);
-  animation: 
-    typewriter var(--typewriter-speed-loading) steps(10) 1s forwards,
+  animation: typewriter var(--typewriter-speed-loading) steps(10) 1s forwards,
     blink 0.4s steps(5) infinite;
   animation-iteration-count: 2;
   /* animation-delay: 4s; */
@@ -105,19 +104,18 @@ body {
 #welcome::after {
   width: 8px;
   background: var(--pointer-color);
-  animation: 
-    typewriter var(--typewriter-speed-welcome) steps(55) 1s forwards,
+  animation: typewriter var(--typewriter-speed-welcome) steps(55) 1s forwards,
     blink 0.4s steps(55) infinite;
 }
-
 
 /* 
 This is fake terminal css
 */
 
-textarea#setter { /* explorer doesn't support [att=val] selector :( */
-  /* left: -1000px;
-  position: absolute; */
+textarea#setter {
+  /* explorer doesn't support [att=val] selector :( */
+  left: -1000px;
+  position: absolute;
   /* height: 200px;
   width: 300px; */
 }
@@ -137,10 +135,10 @@ textarea#setter { /* explorer doesn't support [att=val] selector :( */
 }
 
 #writer {
-  font-family: 'Source Code Pro', monospace, sans-serif;
+  font-family: "Source Code Pro", monospace, sans-serif;
   font-weight: bold;
 }
-                  
+
 #getter {
   margin: 5px;
 }
@@ -151,7 +149,9 @@ textarea#setter { /* explorer doesn't support [att=val] selector :( */
 }
 
 @keyframes typewriter {
-  to { left: 100%; }
+  to {
+    left: 100%;
+  }
 }
 
 @keyframes blink {

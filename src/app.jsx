@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
+import { Fragment } from 'preact'
 import Intro from './Intro'
 import About from './About'
 import Help from './Help'
@@ -169,7 +170,7 @@ export function App(props) {
     let pressKeyTimer = setTimeout(() => {
       document.addEventListener('keydown', keyPressed)
       document.addEventListener("click", setFocusToTerminal)
-    }, 1000)
+    }, 4000)
 
     return () => {
       clearInterval(timer)
@@ -179,7 +180,7 @@ export function App(props) {
   }, [])
   
   return (
-    <>
+    <Fragment>
       <span id='loading'>Loading...</span>
       <div id='welcome'>Welcome to Nderims Terminal! Press a key to continue...</div>
       <div id='welcome2'>--- Welcome to Nderims Terminal! ---</div>
@@ -217,6 +218,6 @@ export function App(props) {
           <Help />
         </div>
       </div>
-    </>
+    </Fragment>
   )
 }
